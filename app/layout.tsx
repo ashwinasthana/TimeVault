@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Time Vault | By Ashwin Asthana",
+  title: "TimeVault",
   description: "Discover historical events, NASA images, and fun facts from your birthday",
 }
 
