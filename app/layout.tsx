@@ -24,9 +24,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "What Happened On My Birthday?",
+  title: "Time Vault | By Ashwin Asthana",
   description: "Discover historical events, NASA images, and fun facts from your birthday",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
