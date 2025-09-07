@@ -102,7 +102,7 @@ export default function HomePage() {
         return
       }
     } catch (error) {
-      console.log("[v0] Web Share API failed:", error)
+      console.log("Web Share API failed:", error)
     }
 
     try {
@@ -110,7 +110,7 @@ export default function HomePage() {
       setShareStatus("success")
       setTimeout(() => setShareStatus("idle"), 2000)
     } catch (clipboardError) {
-      console.log("[v0] Clipboard API failed:", clipboardError)
+      console.log("Clipboard API failed:", clipboardError)
       setShareStatus("error")
       setTimeout(() => setShareStatus("idle"), 3000)
     }
