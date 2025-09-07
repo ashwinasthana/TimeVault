@@ -3,9 +3,25 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Calendar, ImageIcon, Share2, Github, Linkedin, Check, Copy, X, AlertTriangle } from "lucide-react"
+import {
+  Calendar,
+  ImageIcon,
+  Share2,
+  Github,
+  Linkedin,
+  Check,
+  Copy,
+  X,
+  AlertTriangle,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import type { BirthdayData } from "@/lib/types"
@@ -16,7 +32,9 @@ export default function HomePage() {
   const [birthdayData, setBirthdayData] = useState<BirthdayData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [shareStatus, setShareStatus] = useState<"idle" | "sharing" | "success" | "error">("idle")
+  const [shareStatus, setShareStatus] = useState<
+    "idle" | "sharing" | "success" | "error"
+  >("idle")
   const [showValidationModal, setShowValidationModal] = useState(false)
   const [validationMessage, setValidationMessage] = useState("")
 
@@ -32,7 +50,10 @@ export default function HomePage() {
     }
 
     if (selectedDateObj > today) {
-      return { isValid: false, message: "Please select a date from the past. We can't predict the future!" }
+      return {
+        isValid: false,
+        message: "Please select a date from the past. We can't predict the future!",
+      }
     }
 
     if (selectedDateObj < nasaStartDate) {
@@ -202,7 +223,7 @@ export default function HomePage() {
                   </div>
                   <button
                     onClick={() => setShowValidationModal(false)}
-                    className="w-8 h-8 rounded-full bg-background/20 border border-white/20 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background/30 hov[...]"
+                    className="w-8 h-8 rounded-full bg-background/20 border border-white/20 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background/30 transition-all duration-200"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -213,7 +234,7 @@ export default function HomePage() {
                 <div className="flex justify-end">
                   <Button
                     onClick={() => setShowValidationModal(false)}
-                    className="bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary font-medium border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:sh[...]"
+                    className="bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary focus:text-white hover:text-white active:text-white font-medium border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.08)]"
                   >
                     Got it
                   </Button>
@@ -280,7 +301,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 className="w-full max-w-md mx-auto px-4"
               >
-                <Card className="bg-background/20 backdrop-blur-xl border border-white/20 shadow-2xl relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px[...]">
+                <Card className="bg-background/20 backdrop-blur-xl border border-white/20 shadow-2xl relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 border border-white/10 rounded-lg pointer-events-none group-hover:border-white/20 transition-colors duration-500" />
 
@@ -301,7 +322,7 @@ export default function HomePage() {
                           type="date"
                           value={selectedDate}
                           onChange={(e) => setSelectedDate(e.target.value)}
-                          className="w-full bg-background/30 backdrop-blur-sm border-white/20 focus:border-white/40 focus:ring-white/20 text-foreground transition-all duration-300 hover:bg-backgr[...]"
+                          className="w-full bg-background/30 backdrop-blur-sm border-white/20 focus:border-white/40 focus:ring-white/20 text-foreground transition-all duration-300 hover:bg-background/35"
                           required
                         />
                       </div>
@@ -318,7 +339,7 @@ export default function HomePage() {
 
                       <Button
                         type="submit"
-                        className="w-full bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary font-medium py-3 border border-white/10 transition-all duration-300 hover:-transl[...]"
+                        className="w-full bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary focus:text-white active:text-white font-medium py-3 border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.08)]"
                         disabled={loading || !selectedDate}
                       >
                         {loading ? (
@@ -352,7 +373,7 @@ export default function HomePage() {
                 <Button
                   onClick={resetSearch}
                   variant="outline"
-                  className="border-white/20 hover:bg-white/10 text-foreground bg-background/20 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255[...]"
+                  className="border-white/20 hover:bg-white/10 hover:text-white focus:text-white active:text-white text-foreground bg-background/20 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.08)]"
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   Search Another Date
@@ -382,8 +403,8 @@ export default function HomePage() {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="px-4"
                 >
-                  <Card className="overflow-hidden bg-background/10 backdrop-blur-xl border border-white/20 shadow-2xl relative group transition-all duration-500 hover:-translate-y-3 hover:shadow[...]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none group-hover:from-white/10 group-hover:to-white/5 transition-all [...]" />
+                  <Card className="overflow-hidden bg-background/10 backdrop-blur-xl border border-white/20 shadow-2xl relative group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_40px_rgba(0,0,0,0.6)]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none group-hover:from-white/10 group-hover:to-white/5 transition-all duration-500" />
 
                     <CardHeader className="relative z-10">
                       <CardTitle className="flex items-center gap-3 text-lg sm:text-xl text-foreground font-display">
@@ -427,14 +448,14 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-center px-4"
               >
-                <Card className="bg-background/10 backdrop-blur-xl border border-white/20 shadow-2xl max-w-md mx-auto relative group transition-all duration-500 hover:-translate-y-2 hover:shadow[...]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none group-hover:from-white/10 group-hover:to-white/5 transition-all [...]" />
+                <Card className="bg-background/10 backdrop-blur-xl border border-white/20 shadow-2xl max-w-md mx-auto relative group transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_36px_rgba(0,0,0,0.5)]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none group-hover:from-white/10 group-hover:to-white/5 transition-all duration-500" />
 
                   <CardContent className="p-6 space-y-4 relative z-10">
                     <p className="text-muted-foreground font-sans">Share your birthday story</p>
 
                     <Button
-                      className="bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary font-medium border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:[...]"
+                      className="bg-primary/90 backdrop-blur-sm text-primary-foreground hover:bg-primary focus:text-white active:text-white font-medium border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.08)]"
                       onClick={handleShare}
                       disabled={shareStatus === "sharing"}
                     >
@@ -504,7 +525,7 @@ export default function HomePage() {
                 href="https://github.com/ashwinasthana"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.1)] p-2[...]"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.1)] p-2 rounded"
               >
                 <Github className="w-5 h-5" />
                 <span className="sr-only">GitHub</span>
@@ -513,7 +534,7 @@ export default function HomePage() {
                 href="https://linkedin.com/in/ashwinasthanax"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.1)] p-2[...]"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_16px_rgba(255,255,255,0.1)] p-2 rounded"
               >
                 <Linkedin className="w-5 h-5" />
                 <span className="sr-only">LinkedIn</span>
