@@ -26,6 +26,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "TimeVault",
   description: "Discover historical events, NASA images, and fun facts from your birthday",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
