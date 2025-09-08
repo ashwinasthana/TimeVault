@@ -15,7 +15,7 @@
 
 > Rediscover history through NASA’s Astronomy Picture of the Day, turn birthdays and anniversaries into beautiful, shareable snapshots.
 
-[Live Demo](https://time-vault-taupe.vercel.app) · Try: `/?date=1999-10-12`
+[Visit](https://time-vault-taupe.vercel.app) · Try: `/?date=1999-10-12`
 
 ---
 
